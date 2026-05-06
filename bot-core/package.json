@@ -1,0 +1,28 @@
+{
+  "name": "novo-bot",
+  "version": "1.0.0",
+  "description": "Base para rodar um bot WhatsApp multi-setores no Termux usando Baileys.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "web": "node src/web.js",
+    "build:dictionary": "node scripts/build-portuguese-dictionary.js",
+    "test:gemini": "node scripts/test-gemini.js",
+    "models:gemini": "node scripts/list-gemini-models.js",
+    "deploy:s20": "powershell -ExecutionPolicy Bypass -File scripts/deploy-s20.ps1",
+    "check": "node --check src/index.js && node --check src/web.js && node --check src/handlers/menu.js && node --check src/handlers/ia.js && node --check src/handlers/boss.js && node --check src/handlers/oly.js && node --check src/lib/messages.js && node --check src/lib/runtime-status.js && node --check src/lib/admins.js && node --check src/lib/gemini.js && node --check src/lib/offline-ai.js && node --check src/lib/boss-status.js && node --check src/lib/boss-alerts.js && node --check src/lib/oly-ranking.js && node --check src/lib/group-settings.js && node --check src/lib/ia-personality.js && node --check src/lib/device-info.js && node --check src/lib/inbound-messages.js && node --check src/lib/outbound-messages.js && node --check src/lib/portuguese-dictionary.js && node --check src/lib/text-correction.js && node --check src/lib/env.js && node --check scripts/build-portuguese-dictionary.js && node --check scripts/test-gemini.js && node --check scripts/list-gemini-models.js"
+  },
+  "dependencies": {
+    "@whiskeysockets/baileys": "^6.7.18",
+    "express": "^4.21.2",
+    "pino": "^9.5.0",
+    "qrcode": "^1.5.4",
+    "qrcode-terminal": "^0.12.0"
+  },
+  "overrides": {
+    "protobufjs": "^7.5.5"
+  },
+  "devDependencies": {
+    "pdf-parse": "^2.4.5"
+  }
+}
