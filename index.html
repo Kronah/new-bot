@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>WhatsBot Manager</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="./css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
@@ -258,35 +258,55 @@
                 <td><code>oi, olá, ola</code></td>
                 <td>Olá! Bem-vindo ao nosso atendimento. Como posso ajudar?</td>
                 <td><span class="badge-green">Ativo</span></td>
-                <td class="actions"><button class="btn-icon" onclick="editMessage(this)"><i class="fa-solid fa-pen"></i></button><button class="btn-icon danger" onclick="deleteRow(this)"><i class="fa-solid fa-trash"></i></button></td>
+                <td class="actions">
+                  <button title="Editar"><i class="fa-solid fa-pen"></i></button>
+                  <button title="Pausar"><i class="fa-solid fa-pause"></i></button>
+                  <button title="Excluir" class="delete"><i class="fa-solid fa-trash"></i></button>
+                </td>
               </tr>
               <tr>
                 <td>Cardápio</td>
                 <td><code>cardápio, menu</code></td>
                 <td>Aqui está nosso cardápio: [link]</td>
                 <td><span class="badge-green">Ativo</span></td>
-                <td class="actions"><button class="btn-icon" onclick="editMessage(this)"><i class="fa-solid fa-pen"></i></button><button class="btn-icon danger" onclick="deleteRow(this)"><i class="fa-solid fa-trash"></i></button></td>
+                <td class="actions">
+                  <button title="Editar"><i class="fa-solid fa-pen"></i></button>
+                  <button title="Pausar"><i class="fa-solid fa-pause"></i></button>
+                  <button title="Excluir" class="delete"><i class="fa-solid fa-trash"></i></button>
+                </td>
               </tr>
               <tr>
                 <td>Horário</td>
                 <td><code>horário, hora, funcionamento</code></td>
                 <td>Funcionamos de Segunda a Sábado, das 8h às 18h.</td>
                 <td><span class="badge-orange">Pausado</span></td>
-                <td class="actions"><button class="btn-icon" onclick="editMessage(this)"><i class="fa-solid fa-pen"></i></button><button class="btn-icon danger" onclick="deleteRow(this)"><i class="fa-solid fa-trash"></i></button></td>
+                <td class="actions">
+                  <button title="Editar"><i class="fa-solid fa-pen"></i></button>
+                  <button title="Ativar"><i class="fa-solid fa-play"></i></button>
+                  <button title="Excluir" class="delete"><i class="fa-solid fa-trash"></i></button>
+                </td>
               </tr>
               <tr>
                 <td>Endereço</td>
                 <td><code>endereço, localização, onde</code></td>
                 <td>Estamos na Rua Exemplo, 123 - Centro.</td>
                 <td><span class="badge-green">Ativo</span></td>
-                <td class="actions"><button class="btn-icon" onclick="editMessage(this)"><i class="fa-solid fa-pen"></i></button><button class="btn-icon danger" onclick="deleteRow(this)"><i class="fa-solid fa-trash"></i></button></td>
+                <td class="actions">
+                  <button title="Editar"><i class="fa-solid fa-pen"></i></button>
+                  <button title="Pausar"><i class="fa-solid fa-pause"></i></button>
+                  <button title="Excluir" class="delete"><i class="fa-solid fa-trash"></i></button>
+                </td>
               </tr>
               <tr>
                 <td>Despedida</td>
                 <td><code>tchau, obrigado, até</code></td>
                 <td>Obrigado pelo contato! Até logo! 😊</td>
                 <td><span class="badge-green">Ativo</span></td>
-                <td class="actions"><button class="btn-icon" onclick="editMessage(this)"><i class="fa-solid fa-pen"></i></button><button class="btn-icon danger" onclick="deleteRow(this)"><i class="fa-solid fa-trash"></i></button></td>
+                <td class="actions">
+                  <button title="Editar"><i class="fa-solid fa-pen"></i></button>
+                  <button title="Pausar"><i class="fa-solid fa-pause"></i></button>
+                  <button title="Excluir" class="delete"><i class="fa-solid fa-trash"></i></button>
+                </td>
               </tr>
             </tbody>
           </table>
@@ -309,7 +329,7 @@
             <h2>Contatos</h2>
             <input type="text" class="search-input" placeholder="Buscar contato..." oninput="filterContacts(this.value)" />
           </div>
-          <table class="data-table" id="contactsTable">
+          <table class="data-table">
             <thead>
               <tr>
                 <th>Nome</th>
@@ -322,44 +342,59 @@
             </thead>
             <tbody id="contactsBody">
               <tr>
-                <td><div class="contact-name"><div class="avatar">JD</div>João da Silva</div></td>
+                <td><div class="user-cell"><span class="avatar">JD</span>João da Silva</div></td>
                 <td>+55 11 99999-0001</td>
                 <td>06/05/2026 14:32</td>
                 <td>24</td>
                 <td><span class="badge-green">Ativo</span></td>
-                <td class="actions"><button class="btn-icon" onclick="viewContact(this)"><i class="fa-solid fa-eye"></i></button><button class="btn-icon danger" onclick="deleteRow(this)"><i class="fa-solid fa-trash"></i></button></td>
+                <td class="actions">
+                  <button title="Ver Conversa"><i class="fa-solid fa-message"></i></button>
+                  <button title="Editar"><i class="fa-solid fa-pen"></i></button>
+                </td>
               </tr>
               <tr>
-                <td><div class="contact-name"><div class="avatar blue">MA</div>Maria Aparecida</div></td>
+                <td><div class="user-cell"><span class="avatar">MA</span>Maria Aparecida</div></td>
                 <td>+55 21 98888-0002</td>
                 <td>06/05/2026 13:15</td>
                 <td>11</td>
                 <td><span class="badge-green">Ativo</span></td>
-                <td class="actions"><button class="btn-icon" onclick="viewContact(this)"><i class="fa-solid fa-eye"></i></button><button class="btn-icon danger" onclick="deleteRow(this)"><i class="fa-solid fa-trash"></i></button></td>
+                <td class="actions">
+                  <button title="Ver Conversa"><i class="fa-solid fa-message"></i></button>
+                  <button title="Editar"><i class="fa-solid fa-pen"></i></button>
+                </td>
               </tr>
               <tr>
-                <td><div class="contact-name"><div class="avatar orange">CS</div>Carlos Souza</div></td>
+                <td><div class="user-cell"><span class="avatar">CS</span>Carlos Souza</div></td>
                 <td>+55 31 97777-0003</td>
                 <td>05/05/2026 10:00</td>
                 <td>7</td>
-                <td><span class="badge-orange">Inativo</span></td>
-                <td class="actions"><button class="btn-icon" onclick="viewContact(this)"><i class="fa-solid fa-eye"></i></button><button class="btn-icon danger" onclick="deleteRow(this)"><i class="fa-solid fa-trash"></i></button></td>
+                <td><span class="badge-gray">Inativo</span></td>
+                <td class="actions">
+                  <button title="Ver Conversa"><i class="fa-solid fa-message"></i></button>
+                  <button title="Editar"><i class="fa-solid fa-pen"></i></button>
+                </td>
               </tr>
               <tr>
-                <td><div class="contact-name"><div class="avatar purple">AF</div>Ana Ferreira</div></td>
+                <td><div class="user-cell"><span class="avatar">AF</span>Ana Ferreira</div></td>
                 <td>+55 41 96666-0004</td>
                 <td>04/05/2026 09:45</td>
                 <td>33</td>
                 <td><span class="badge-green">Ativo</span></td>
-                <td class="actions"><button class="btn-icon" onclick="viewContact(this)"><i class="fa-solid fa-eye"></i></button><button class="btn-icon danger" onclick="deleteRow(this)"><i class="fa-solid fa-trash"></i></button></td>
+                <td class="actions">
+                  <button title="Ver Conversa"><i class="fa-solid fa-message"></i></button>
+                  <button title="Editar"><i class="fa-solid fa-pen"></i></button>
+                </td>
               </tr>
               <tr>
-                <td><div class="contact-name"><div class="avatar">RL</div>Roberto Lima</div></td>
+                <td><div class="user-cell"><span class="avatar">RL</span>Roberto Lima</div></td>
                 <td>+55 51 95555-0005</td>
                 <td>03/05/2026 16:20</td>
                 <td>5</td>
                 <td><span class="badge-green">Ativo</span></td>
-                <td class="actions"><button class="btn-icon" onclick="viewContact(this)"><i class="fa-solid fa-eye"></i></button><button class="btn-icon danger" onclick="deleteRow(this)"><i class="fa-solid fa-trash"></i></button></td>
+                <td class="actions">
+                  <button title="Ver Conversa"><i class="fa-solid fa-message"></i></button>
+                  <button title="Editar"><i class="fa-solid fa-pen"></i></button>
+                </td>
               </tr>
             </tbody>
           </table>
@@ -376,60 +411,72 @@
 
         <div class="flows-grid" id="flowsGrid">
           <div class="flow-card">
-            <div class="flow-icon green"><i class="fa-solid fa-utensils"></i></div>
-            <div class="flow-info">
+            <div class="flow-icon"><i class="fa-solid fa-list-check"></i></div>
+            <div class="flow-body">
               <h3>Cardápio</h3>
               <p>Fluxo de apresentação do cardápio com opções de categorias.</p>
-              <div class="flow-meta"><span><i class="fa-solid fa-code-branch"></i> 4 etapas</span><span class="badge-green">Ativo</span></div>
+              <div class="flow-meta">
+                <span><i class="fa-solid fa-layer-group"></i> 4 etapas</span>
+                <span class="badge-green">Ativo</span>
+              </div>
             </div>
-            <div class="flow-actions">
-              <button class="btn btn-sm btn-outline" onclick="editFlow(this)"><i class="fa-solid fa-pen"></i> Editar</button>
-              <button class="btn btn-sm btn-danger" onclick="deleteFlow(this)"><i class="fa-solid fa-trash"></i></button>
+            <div class="flow-footer">
+              <button class="btn btn-sm btn-outline">Editar</button>
+              <button class="btn btn-sm btn-icon"><i class="fa-solid fa-ellipsis-vertical"></i></button>
             </div>
           </div>
 
           <div class="flow-card">
             <div class="flow-icon blue"><i class="fa-solid fa-headset"></i></div>
-            <div class="flow-info">
+            <div class="flow-body">
               <h3>Suporte Técnico</h3>
               <p>Triagem de problemas técnicos com encaminhamento ao atendente.</p>
-              <div class="flow-meta"><span><i class="fa-solid fa-code-branch"></i> 6 etapas</span><span class="badge-green">Ativo</span></div>
+              <div class="flow-meta">
+                <span><i class="fa-solid fa-layer-group"></i> 6 etapas</span>
+                <span class="badge-green">Ativo</span>
+              </div>
             </div>
-            <div class="flow-actions">
-              <button class="btn btn-sm btn-outline" onclick="editFlow(this)"><i class="fa-solid fa-pen"></i> Editar</button>
-              <button class="btn btn-sm btn-danger" onclick="deleteFlow(this)"><i class="fa-solid fa-trash"></i></button>
+            <div class="flow-footer">
+              <button class="btn btn-sm btn-outline">Editar</button>
+              <button class="btn btn-sm btn-icon"><i class="fa-solid fa-ellipsis-vertical"></i></button>
             </div>
           </div>
 
           <div class="flow-card">
-            <div class="flow-icon orange"><i class="fa-solid fa-tag"></i></div>
-            <div class="flow-info">
+            <div class="flow-icon purple"><i class="fa-solid fa-tags"></i></div>
+            <div class="flow-body">
               <h3>Promoções</h3>
               <p>Envio automático de promoções e cupons para clientes.</p>
-              <div class="flow-meta"><span><i class="fa-solid fa-code-branch"></i> 3 etapas</span><span class="badge-orange">Pausado</span></div>
+              <div class="flow-meta">
+                <span><i class="fa-solid fa-layer-group"></i> 3 etapas</span>
+                <span class="badge-orange">Pausado</span>
+              </div>
             </div>
-            <div class="flow-actions">
-              <button class="btn btn-sm btn-outline" onclick="editFlow(this)"><i class="fa-solid fa-pen"></i> Editar</button>
-              <button class="btn btn-sm btn-danger" onclick="deleteFlow(this)"><i class="fa-solid fa-trash"></i></button>
+            <div class="flow-footer">
+              <button class="btn btn-sm btn-outline">Editar</button>
+              <button class="btn btn-sm btn-icon"><i class="fa-solid fa-ellipsis-vertical"></i></button>
             </div>
           </div>
 
           <div class="flow-card">
-            <div class="flow-icon purple"><i class="fa-solid fa-calendar-check"></i></div>
-            <div class="flow-info">
+            <div class="flow-icon orange"><i class="fa-solid fa-calendar-check"></i></div>
+            <div class="flow-body">
               <h3>Agendamento</h3>
               <p>Fluxo completo para agendamento de serviços e consultas.</p>
-              <div class="flow-meta"><span><i class="fa-solid fa-code-branch"></i> 8 etapas</span><span class="badge-green">Ativo</span></div>
+              <div class="flow-meta">
+                <span><i class="fa-solid fa-layer-group"></i> 8 etapas</span>
+                <span class="badge-green">Ativo</span>
+              </div>
             </div>
-            <div class="flow-actions">
-              <button class="btn btn-sm btn-outline" onclick="editFlow(this)"><i class="fa-solid fa-pen"></i> Editar</button>
-              <button class="btn btn-sm btn-danger" onclick="deleteFlow(this)"><i class="fa-solid fa-trash"></i></button>
+            <div class="flow-footer">
+              <button class="btn btn-sm btn-outline">Editar</button>
+              <button class="btn btn-sm btn-icon"><i class="fa-solid fa-ellipsis-vertical"></i></button>
             </div>
           </div>
 
-          <div class="flow-card add-flow-card" onclick="openModal('modalAddFlow')">
+          <div class="flow-card add-flow" onclick="openModal('modalAddFlow')">
             <i class="fa-solid fa-plus"></i>
-            <p>Adicionar Novo Fluxo</p>
+            <span>Adicionar Novo Fluxo</span>
           </div>
         </div>
       </section>
@@ -438,74 +485,34 @@
       <section class="page" id="page-logs">
         <div class="page-actions">
           <button class="btn btn-outline" onclick="clearLogs()">
-            <i class="fa-solid fa-trash"></i> Limpar Logs
+            <i class="fa-solid fa-broom"></i> Limpar Logs
           </button>
           <button class="btn btn-outline" onclick="exportLogs()">
             <i class="fa-solid fa-download"></i> Exportar
           </button>
         </div>
 
-        <div class="card">
+        <div class="card logs-card">
           <div class="card-header">
             <h2>Logs do Sistema</h2>
-            <div class="log-filters">
-              <button class="filter-btn active" onclick="filterLogs('all', this)">Todos</button>
-              <button class="filter-btn" onclick="filterLogs('info', this)">Info</button>
-              <button class="filter-btn" onclick="filterLogs('warn', this)">Aviso</button>
-              <button class="filter-btn" onclick="filterLogs('error', this)">Erro</button>
+            <div class="filter-group">
+              <button class="btn-filter active" onclick="filterLogs('all')">Todos</button>
+              <button class="btn-filter" onclick="filterLogs('info')">Info</button>
+              <button class="btn-filter" onclick="filterLogs('warning')">Aviso</button>
+              <button class="btn-filter" onclick="filterLogs('error')">Erro</button>
             </div>
           </div>
-          <div class="log-container" id="logContainer">
-            <div class="log-entry info" data-type="info">
-              <span class="log-time">14:35:02</span>
-              <span class="log-type info">INFO</span>
-              <span class="log-msg">Bot iniciado com sucesso.</span>
-            </div>
-            <div class="log-entry info" data-type="info">
-              <span class="log-time">14:35:05</span>
-              <span class="log-type info">INFO</span>
-              <span class="log-msg">Conexão com WhatsApp estabelecida.</span>
-            </div>
-            <div class="log-entry info" data-type="info">
-              <span class="log-time">14:36:12</span>
-              <span class="log-type info">INFO</span>
-              <span class="log-msg">Mensagem recebida de +55 11 99999-0001: "oi"</span>
-            </div>
-            <div class="log-entry info" data-type="info">
-              <span class="log-time">14:36:12</span>
-              <span class="log-type info">INFO</span>
-              <span class="log-msg">Gatilho "Boas-vindas" acionado para +55 11 99999-0001.</span>
-            </div>
-            <div class="log-entry warn" data-type="warn">
-              <span class="log-time">14:40:30</span>
-              <span class="log-type warn">AVISO</span>
-              <span class="log-msg">Mensagem sem gatilho correspondente de +55 21 98888-0002.</span>
-            </div>
-            <div class="log-entry info" data-type="info">
-              <span class="log-time">14:42:00</span>
-              <span class="log-type info">INFO</span>
-              <span class="log-msg">Fluxo "Cardápio" iniciado por +55 31 97777-0003.</span>
-            </div>
-            <div class="log-entry error" data-type="error">
-              <span class="log-time">14:45:18</span>
-              <span class="log-type error">ERRO</span>
-              <span class="log-msg">Falha ao enviar mídia para +55 41 96666-0004. Arquivo não encontrado.</span>
-            </div>
-            <div class="log-entry info" data-type="info">
-              <span class="log-time">14:50:00</span>
-              <span class="log-type info">INFO</span>
-              <span class="log-msg">Backup automático de configurações realizado.</span>
-            </div>
-            <div class="log-entry warn" data-type="warn">
-              <span class="log-time">14:55:44</span>
-              <span class="log-type warn">AVISO</span>
-              <span class="log-msg">Latência elevada detectada: 380ms.</span>
-            </div>
-            <div class="log-entry info" data-type="info">
-              <span class="log-time">15:00:01</span>
-              <span class="log-type info">INFO</span>
-              <span class="log-msg">Relatório diário gerado com sucesso.</span>
-            </div>
+          <div class="logs-container" id="logsContainer">
+            <div class="log-entry info"><span class="time">14:35:02</span><span class="type">INFO</span><span class="msg">Bot iniciado com sucesso.</span></div>
+            <div class="log-entry info"><span class="time">14:35:05</span><span class="type">INFO</span><span class="msg">Conexão com WhatsApp estabelecida.</span></div>
+            <div class="log-entry info"><span class="time">14:36:12</span><span class="type">INFO</span><span class="msg">Mensagem recebida de +55 11 99999-0001: "oi"</span></div>
+            <div class="log-entry info"><span class="time">14:36:12</span><span class="type">INFO</span><span class="msg">Gatilho "Boas-vindas" acionado para +55 11 99999-0001.</span></div>
+            <div class="log-entry warning"><span class="time">14:40:30</span><span class="type">AVISO</span><span class="msg">Mensagem sem gatilho correspondente de +55 21 98888-0002.</span></div>
+            <div class="log-entry info"><span class="time">14:42:00</span><span class="type">INFO</span><span class="msg">Fluxo "Cardápio" iniciado por +55 31 97777-0003.</span></div>
+            <div class="log-entry error"><span class="time">14:45:18</span><span class="type">ERRO</span><span class="msg">Falha ao enviar mídia para +55 41 96666-0004. Arquivo não encontrado.</span></div>
+            <div class="log-entry info"><span class="time">14:50:00</span><span class="type">INFO</span><span class="msg">Backup automático de configurações realizado.</span></div>
+            <div class="log-entry warning"><span class="time">14:55:44</span><span class="type">AVISO</span><span class="msg">Latência elevada detectada: 380ms.</span></div>
+            <div class="log-entry info"><span class="time">15:00:01</span><span class="type">INFO</span><span class="msg">Relatório diário gerado com sucesso.</span></div>
           </div>
         </div>
       </section>
@@ -513,206 +520,182 @@
       <!-- SETTINGS -->
       <section class="page" id="page-settings">
         <div class="settings-grid">
-          <div class="card settings-card">
-            <div class="card-header"><h2><i class="fa-solid fa-robot"></i> Configurações do Bot</h2></div>
-            <div class="settings-form">
-              <div class="form-group">
-                <label>Nome do Bot</label>
-                <input type="text" class="form-input" value="WhatsBot v1.0" id="botName" />
-              </div>
-              <div class="form-group">
-                <label>Número do WhatsApp</label>
-                <input type="text" class="form-input" value="+55 11 94444-0000" id="botNumber" />
-              </div>
-              <div class="form-group">
-                <label>Mensagem de Ausência</label>
-                <textarea class="form-input" rows="3" id="awayMessage">No momento estou ausente. Retornarei em breve!</textarea>
-              </div>
-              <div class="form-group toggle-group">
-                <label>Modo Ausência</label>
-                <label class="toggle">
-                  <input type="checkbox" id="awayMode" />
-                  <span class="slider"></span>
-                </label>
-              </div>
-              <div class="form-group toggle-group">
-                <label>Resposta Automática</label>
-                <label class="toggle">
-                  <input type="checkbox" id="autoReply" checked />
-                  <span class="slider"></span>
-                </label>
-              </div>
+          <div class="card">
+            <div class="card-header"><h2>Configurações do Bot</h2></div>
+            <div class="form-group">
+              <label for="botName">Nome do Bot</label>
+              <input type="text" id="botName" value="WhatsBot v1.0" />
+            </div>
+            <div class="form-group">
+              <label for="botNumber">Número do WhatsApp</label>
+              <input type="text" id="botNumber" value="+55 11 94444-0000" />
+            </div>
+            <div class="form-group">
+              <label for="awayMessage">Mensagem de Ausência</label>
+              <textarea id="awayMessage">No momento estou ausente. Retornarei em breve!</textarea>
+            </div>
+            <div class="switch-group">
+              <label>Modo Ausência</label>
+              <label class="switch"><input type="checkbox" id="awayMode" checked><span class="slider"></span></label>
+            </div>
+            <div class="switch-group">
+              <label>Resposta Automática</label>
+              <label class="switch"><input type="checkbox" id="autoReply" checked><span class="slider"></span></label>
             </div>
           </div>
 
-          <div class="card settings-card">
-            <div class="card-header"><h2><i class="fa-solid fa-bell"></i> Notificações</h2></div>
-            <div class="settings-form">
-              <div class="form-group toggle-group">
-                <label>Notificar novas mensagens</label>
-                <label class="toggle"><input type="checkbox" checked /><span class="slider"></span></label>
-              </div>
-              <div class="form-group toggle-group">
-                <label>Notificar erros do bot</label>
-                <label class="toggle"><input type="checkbox" checked /><span class="slider"></span></label>
-              </div>
-              <div class="form-group toggle-group">
-                <label>Relatório diário por e-mail</label>
-                <label class="toggle"><input type="checkbox" /><span class="slider"></span></label>
-              </div>
-              <div class="form-group">
-                <label>E-mail para notificações</label>
-                <input type="email" class="form-input" placeholder="seu@email.com" />
-              </div>
+          <div class="card">
+            <div class="card-header"><h2>Notificações</h2></div>
+            <div class="switch-group">
+              <label>Notificar novas mensagens</label>
+              <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+            </div>
+            <div class="switch-group">
+              <label>Notificar erros do bot</label>
+              <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+            </div>
+            <div class="switch-group">
+              <label>Relatório diário por e-mail</label>
+              <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+            </div>
+            <div class="form-group">
+              <label>E-mail para notificações</label>
+              <input type="email" placeholder="seu@email.com" />
             </div>
           </div>
 
-          <div class="card settings-card">
-            <div class="card-header"><h2><i class="fa-solid fa-clock"></i> Horário de Funcionamento</h2></div>
-            <div class="settings-form">
+          <div class="card">
+            <div class="card-header"><h2>Horário de Funcionamento</h2></div>
+            <div class="form-row">
               <div class="form-group">
                 <label>Horário de Início</label>
-                <input type="time" class="form-input" value="08:00" />
+                <input type="time" value="08:00" />
               </div>
               <div class="form-group">
                 <label>Horário de Encerramento</label>
-                <input type="time" class="form-input" value="18:00" />
+                <input type="time" value="18:00" />
               </div>
-              <div class="form-group toggle-group">
-                <label>Ativo nos Finais de Semana</label>
-                <label class="toggle"><input type="checkbox" /><span class="slider"></span></label>
-              </div>
-              <div class="form-group toggle-group">
-                <label>Ativo em Feriados</label>
-                <label class="toggle"><input type="checkbox" /><span class="slider"></span></label>
-              </div>
+            </div>
+            <div class="switch-group">
+              <label>Ativo nos Finais de Semana</label>
+              <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+            </div>
+            <div class="switch-group">
+              <label>Ativo em Feriados</label>
+              <label class="switch"><input type="checkbox"><span class="slider"></span></label>
             </div>
           </div>
 
-          <div class="card settings-card full-width">
-            <div class="card-header"><h2><i class="fa-solid fa-shield-halved"></i> Segurança e Dados</h2></div>
-            <div class="settings-form horizontal">
-              <button class="btn btn-outline" onclick="showToast('Backup realizado com sucesso!', 'success')">
-                <i class="fa-solid fa-cloud-arrow-up"></i> Fazer Backup
-              </button>
-              <button class="btn btn-outline" onclick="showToast('Configurações restauradas!', 'success')">
-                <i class="fa-solid fa-cloud-arrow-down"></i> Restaurar Backup
-              </button>
-              <button class="btn btn-danger" onclick="confirmReset()">
-                <i class="fa-solid fa-triangle-exclamation"></i> Resetar Tudo
-              </button>
+          <div class="card">
+            <div class="card-header"><h2>Segurança e Dados</h2></div>
+            <div class="actions-vertical">
+              <button class="btn btn-outline" onclick="alert('Backup realizado!')">Fazer Backup</button>
+              <button class="btn btn-outline">Restaurar Backup</button>
+              <button class="btn btn-danger-outline">Resetar Tudo</button>
             </div>
           </div>
         </div>
-
-        <div class="save-bar">
-          <button class="btn btn-primary" onclick="saveSettings()">
-            <i class="fa-solid fa-floppy-disk"></i> Salvar Configurações
-          </button>
+        <div class="settings-footer">
+          <button class="btn btn-primary btn-lg" onclick="saveSettings()">Salvar Configurações</button>
         </div>
       </section>
 
     </div>
   </main>
 
-  <!-- MODALS -->
-  <div class="modal-overlay" id="modalAddMessage">
-    <div class="modal">
+  <!-- Modals -->
+  <div class="modal" id="modalAddMessage">
+    <div class="modal-content">
       <div class="modal-header">
-        <h2 id="modalMessageTitle">Nova Mensagem Automática</h2>
-        <button class="modal-close" onclick="closeModal('modalAddMessage')"><i class="fa-solid fa-xmark"></i></button>
+        <h2>Nova Mensagem Automática</h2>
+        <button class="close-modal" onclick="closeModal('modalAddMessage')">&times;</button>
       </div>
       <div class="modal-body">
         <div class="form-group">
-          <label>Nome da Mensagem</label>
-          <input type="text" class="form-input" id="msgName" placeholder="Ex: Boas-vindas" />
+          <label for="msgName">Nome da Mensagem</label>
+          <input type="text" id="msgName" placeholder="Ex: Boas-vindas" />
         </div>
         <div class="form-group">
-          <label>Gatilhos (separados por vírgula)</label>
-          <input type="text" class="form-input" id="msgTrigger" placeholder="Ex: oi, olá, ola" />
+          <label for="msgTrigger">Gatilhos (separados por vírgula)</label>
+          <input type="text" id="msgTrigger" placeholder="Ex: oi, olá, ola" />
         </div>
         <div class="form-group">
-          <label>Mensagem de Resposta</label>
-          <textarea class="form-input" rows="4" id="msgContent" placeholder="Digite a mensagem que o bot enviará..."></textarea>
+          <label for="msgContent">Mensagem de Resposta</label>
+          <textarea id="msgContent" placeholder="Digite a mensagem que o bot enviará..."></textarea>
         </div>
-        <div class="form-group toggle-group">
-          <label>Ativar imediatamente</label>
-          <label class="toggle"><input type="checkbox" id="msgActive" checked /><span class="slider"></span></label>
+        <div class="switch-group">
+          <label for="msgActive">Ativar imediatamente</label>
+          <label class="switch"><input type="checkbox" id="msgActive" checked><span class="slider"></span></label>
         </div>
       </div>
       <div class="modal-footer">
         <button class="btn btn-secondary" onclick="closeModal('modalAddMessage')">Cancelar</button>
-        <button class="btn btn-primary" onclick="saveMessage()">Salvar Mensagem</button>
+        <button class="btn btn-primary" onclick="addMessage()">Salvar Mensagem</button>
       </div>
     </div>
   </div>
 
-  <div class="modal-overlay" id="modalAddContact">
-    <div class="modal">
+  <div class="modal" id="modalAddContact">
+    <div class="modal-content">
       <div class="modal-header">
         <h2>Novo Contato</h2>
-        <button class="modal-close" onclick="closeModal('modalAddContact')"><i class="fa-solid fa-xmark"></i></button>
+        <button class="close-modal" onclick="closeModal('modalAddContact')">&times;</button>
       </div>
       <div class="modal-body">
         <div class="form-group">
-          <label>Nome</label>
-          <input type="text" class="form-input" id="contactName" placeholder="Nome completo" />
+          <label for="contactName">Nome</label>
+          <input type="text" id="contactName" placeholder="Nome completo" />
         </div>
         <div class="form-group">
-          <label>Número do WhatsApp</label>
-          <input type="text" class="form-input" id="contactNumber" placeholder="+55 11 99999-0000" />
+          <label for="contactNumber">Número do WhatsApp</label>
+          <input type="text" id="contactNumber" placeholder="+55 11 99999-0000" />
         </div>
         <div class="form-group">
-          <label>Observações</label>
-          <textarea class="form-input" rows="3" id="contactNotes" placeholder="Informações adicionais..."></textarea>
+          <label for="contactNotes">Observações</label>
+          <textarea id="contactNotes" placeholder="Informações adicionais..."></textarea>
         </div>
       </div>
       <div class="modal-footer">
         <button class="btn btn-secondary" onclick="closeModal('modalAddContact')">Cancelar</button>
-        <button class="btn btn-primary" onclick="saveContact()">Salvar Contato</button>
+        <button class="btn btn-primary" onclick="addContact()">Salvar Contato</button>
       </div>
     </div>
   </div>
 
-  <div class="modal-overlay" id="modalAddFlow">
-    <div class="modal">
+  <div class="modal" id="modalAddFlow">
+    <div class="modal-content">
       <div class="modal-header">
         <h2>Novo Fluxo de Atendimento</h2>
-        <button class="modal-close" onclick="closeModal('modalAddFlow')"><i class="fa-solid fa-xmark"></i></button>
+        <button class="close-modal" onclick="closeModal('modalAddFlow')">&times;</button>
       </div>
       <div class="modal-body">
         <div class="form-group">
-          <label>Nome do Fluxo</label>
-          <input type="text" class="form-input" id="flowName" placeholder="Ex: Agendamento" />
+          <label for="flowName">Nome do Fluxo</label>
+          <input type="text" id="flowName" placeholder="Ex: Agendamento" />
         </div>
         <div class="form-group">
-          <label>Descrição</label>
-          <input type="text" class="form-input" id="flowDesc" placeholder="Descreva o objetivo do fluxo" />
+          <label for="flowDesc">Descrição</label>
+          <input type="text" id="flowDesc" placeholder="Descreva o objetivo do fluxo" />
         </div>
         <div class="form-group">
-          <label>Ícone</label>
-          <select class="form-input" id="flowIcon">
-            <option value="fa-diagram-project">Fluxo</option>
+          <label for="flowIcon">Ícone</label>
+          <select id="flowIcon">
+            <option value="fa-list-check">Fluxo</option>
             <option value="fa-utensils">Cardápio</option>
             <option value="fa-headset">Suporte</option>
             <option value="fa-calendar-check">Agendamento</option>
-            <option value="fa-tag">Promoções</option>
-            <option value="fa-truck">Entrega</option>
+            <option value="fa-tags">Promoções</option>
           </select>
         </div>
       </div>
       <div class="modal-footer">
         <button class="btn btn-secondary" onclick="closeModal('modalAddFlow')">Cancelar</button>
-        <button class="btn btn-primary" onclick="saveFlow()">Criar Fluxo</button>
+        <button class="btn btn-primary" onclick="addFlow()">Criar Fluxo</button>
       </div>
     </div>
   </div>
 
-  <!-- TOAST -->
-  <div class="toast" id="toast"></div>
-
-  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="js/app.js"></script>
+  <script src="./js/app.js"></script>
 </body>
 </html>
